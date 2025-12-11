@@ -11,7 +11,7 @@ O robô utiliza sensores infravermelhos para seguir linhas e um sensor ultrassô
 
 ---
 
-## 🚀 Funcionalidades
+## ⚙️ Funcionalidades
 
 - Segue linha usando **4 sensores IR** (2 frontais e 2 laterais)
 - Detecta obstáculos com **sensor ultrassônico**
@@ -35,7 +35,7 @@ O robô utiliza sensores infravermelhos para seguir linhas e um sensor ultrassô
 
 ---
 
-## 🧠 Como Funciona (Resumo)
+## 📌 Como Funciona (Resumo)
 
 - Os sensores IR retornam valores analógicos. Se o valor é maior que o **limiar**, considera-se que o sensor está vendo **preto**.
 - A lógica verifica:
@@ -75,7 +75,7 @@ Você pode usar, modificar e compartilhar à vontade.
 
 ---
 
-## ✨ Autores
+## 🥇 Autores
 
 - | Derick Portela | [@DerickP](https://github.com/DerickxP) |
 - | Michael Domingos | [@michaeldomingos](https://github.com/mmichaeldomingos) |

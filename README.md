@@ -71,12 +71,12 @@ Você pode usar, modificar e compartilhar à vontade.
 
 ## 🎥 Vídeos / GIFs
 
-![Circuito - Vídeo da Robótica](imagens/ROBOTICA2.mp4)
+[![Circuito] - Vídeo da Robótica](imagens/ROBOTICA2.mp4)
 
 ---
 
 ## ✨ Autores
 
 - | Derick Portela | [@DerickP](https://github.com/DerickP) |
-- | Michael Domingos | [@michaeldomingos](https://github.com/michaeldomingos) |
+- | Michael Domingos | [@michaeldomingos](https://github.com/mmichaeldomingos) |
 - | Raul Vitor | [@raulvitor](https://github.com/raulvitor) |

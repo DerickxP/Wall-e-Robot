@@ -1,6 +1,3 @@
-# Wall-e-Robot
-Programação de um veículo robótico baseado em Arduino
-
 # 🤖 Wall-E — Robô Seguidor de Linha com Desvio de Obstáculos
 
 [![Made with Arduino](https://img.shields.io/badge/Made%20with-Arduino-blue)]()
@@ -67,24 +64,14 @@ Você pode usar, modificar e compartilhar à vontade.
 
 ## 📸 Imagens
 
-Use este formato para adicionar imagens após subi-las na pasta `/imagens`:
+| Equipe | Robô | Premiação |
+|--------|------|-----------|
+| <img src="imagens/image3.jpeg" width="250"> | <img src="imagens/image2.jpeg" width="250"> | <img src="imagens/image1.jpeg" width="250"> |
 
-```md
-![Equipe](imagens/image3.jpg)
-```
-```md
-![Robô](imagens/image2.jpg)
-```
-```md
-![Premiação](imagens/image1.jpg)
-```
----
 
 ## 🎥 Vídeos / GIFs
 
-```md
-[![Circuito](imagens/demo.gif)](imagens/ROBOTICA2.mp4)
-```
+[Vídeo da Robótica](imagens/ROBOTICA2.mp4)
 
 ---
 

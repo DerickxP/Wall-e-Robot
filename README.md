@@ -71,7 +71,7 @@ Você pode usar, modificar e compartilhar à vontade.
 
 ## 🎥 Vídeos / GIFs
 
-[Vídeo da Robótica](imagens/ROBOTICA2.mp4)
+![Circuito - Vídeo da Robótica](imagens/ROBOTICA2.mp4)
 
 ---
 

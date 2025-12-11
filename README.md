@@ -77,6 +77,6 @@ Você pode usar, modificar e compartilhar à vontade.
 
 ## ✨ Autores
 
-- | Derick Portela | [@DerickP](https://github.com/DerickP) |
+- | Derick Portela | [@DerickP](https://github.com/DerickxP) |
 - | Michael Domingos | [@michaeldomingos](https://github.com/mmichaeldomingos) |
 - | Raul Vitor | [@raulvitor](https://github.com/raulvitor) |

@@ -1,82 +1,77 @@
-# 🤖 Wall-E — Robô Seguidor de Linha com Desvio de Obstáculos
+# Wall-E: robô seguidor de linha com desvio de obstáculos
 
-[![Made with Arduino](https://img.shields.io/badge/Made%20with-Arduino-blue)]()
+![Arduino](https://img.shields.io/badge/Arduino-00878F?logo=arduino&logoColor=white)
 ![C++](https://img.shields.io/badge/C%2B%2B-00599C?logo=cplusplus&logoColor=white)
-[![License](https://img.shields.io/badge/License-MIT-green)]()
-[![Status](https://img.shields.io/badge/Status-Ativo-success)]()
-[![Plataforma-ENTEC](https://img.shields.io/badge/Evento-13ª%20ENTEC%20UNINASSAU-orange)]()
+![ENTEC](https://img.shields.io/badge/13%C2%AA%20ENTEC-UNINASSAU%202025-orange)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-Projeto desenvolvido para a **13ª edição da ENTEC UNINASSAU**, carinhosamente apelidado de **Wall-E**.  
-O robô utiliza sensores infravermelhos para seguir linhas e um sensor ultrassônico para desviar automaticamente de obstáculos.
+Robô em Arduino que segue uma linha preta usando quatro sensores infravermelhos e
+para e desvia quando um sensor ultrassônico detecta um obstáculo à frente. Projeto
+desenvolvido em equipe e apresentado na **13ª ENTEC UNINASSAU**.
 
----
+## Componentes
 
-## ⚙️ Funcionalidades
+| Componente | Uso |
+|---|---|
+| Arduino | Controle (código em `codigo/carro.ino`) |
+| Módulo seguidor de linha com 4 sensores IR | 2 frontais e 2 laterais, lidos como entradas analógicas |
+| Sensor ultrassônico HC-SR04 | Distância até obstáculos |
+| Ponte H HW-095 | Acionamento dos motores esquerdo e direito com controle de velocidade (PWM) |
+| Motores DC | Tração |
+| Bateria 9–12 V | Alimentação |
 
-- Segue linha usando **4 sensores IR** (2 frontais e 2 laterais)
-- Detecta obstáculos com **sensor ultrassônico**
-- Realiza curvas suaves e acentuadas
-- Sistema de motores controlado por **ponte H HW-095**
-- Velocidades configuráveis
-- Lógica robusta para retomada da linha
+### Ligações
 
----
+| Sinal | Pino |
+|---|---|
+| Sensor frontal esquerdo / direito | A4 / A5 |
+| Sensor lateral esquerdo / direito | A2 / A3 |
+| Ponte H: ENA, IN1, IN2 (motor esquerdo) | 5, 8, 9 |
+| Ponte H: ENB, IN3, IN4 (motor direito) | 6, 10, 11 |
+| Ultrassônico: TRIG / ECHO | 4 / 3 |
 
-## 🔧 Componentes Utilizados
+## Como funciona
 
-| Componente | Quantidade |
-|-----------|------------|
-| Arduino UNO / Nano | 1 |
-| Ponte H HW-095 | 1 |
-| Motores DC | 2 |
-| Sensor Ultrassônico HC-SR04 | 1 |
-| Módulo Seguidor de Linha (4 sensores) | 1 |
-| Bateria 9–12V | 1 |
+A cada ciclo (cerca de 20 ms) o robô lê os quatro sensores IR e a distância do
+ultrassônico. Um sensor com leitura acima do limiar (`LIMIAR = 250`) está vendo preto.
 
----
+1. **Obstáculo a menos de 15 cm:** para por 200 ms e faz uma curva por 300 ms.
+2. **Os dois sensores frontais na linha:** segue em frente.
+3. **Só um sensor frontal na linha:** curva suave para o lado da linha, reduzindo a
+   velocidade de um dos motores.
+4. **Linha em um sensor lateral:** curva acentuada, com um dos motores em ré.
+5. **Nenhuma das situações acima:** segue em frente em velocidade reduzida.
 
-## 📌 Como Funciona (Resumo)
+As velocidades (`velNormal`, `velCurva`) e o limiar ficam no início do código para
+ajuste conforme a pista e a bateria.
 
-- Os sensores IR retornam valores analógicos. Se o valor é maior que o **limiar**, considera-se que o sensor está vendo **preto**.
-- A lógica verifica:
-  - Linha central → anda reto  
-  - Linha desviada → curva  
-  - Linha lateral → curva acentuada  
-  - Obstáculo < 15 cm → parar → desviar  
+## Como rodar
 
----
+1. Abra `codigo/carro.ino` no Arduino IDE. A IDE pede para colocar o arquivo numa
+   pasta `carro/`; aceite.
+2. Conecte o Arduino, selecione a placa e a porta e faça o upload.
+3. Coloque o robô sobre a pista. O monitor serial está configurado em 9600 baud.
 
-## ▶️ Como rodar
+## Limitações
 
-1. Abra o arquivo `carro.ino` no Arduino IDE.
-2. Conecte o Arduino.
-3. Faça upload.
-4. Coloque o robô sobre a pista e divirta-se!
+- O desvio de obstáculo é uma curva de tempo fixo; o robô não contorna o obstáculo
+  nem procura a linha de volta.
+- O limiar dos sensores IR é fixo e precisa ser recalibrado conforme a iluminação e a pista.
+- Nas funções de curva acentuada, o motor que vai em ré é o do lado oposto ao do nome
+  da função. Vale conferir contra a fiação dos motores antes de alterar.
 
----
+## Equipe
 
-## 📜 Licença
-
-Este projeto é distribuído sob a licença **MIT**.  
-Você pode usar, modificar e compartilhar à vontade.
-
----
-
-## 📸 Imagens
+- Derick Portela ([@DerickxP](https://github.com/DerickxP))
+- Michael Domingos ([@mmichaeldomingos](https://github.com/mmichaeldomingos))
+- Raul Vitor
 
 | Equipe | Robô | Apresentação na ENTEC |
 |--------|------|-----------|
 | <img src="imagens/image3.jpeg" width="250"> | <img src="imagens/image2.jpeg" width="250"> | <img src="imagens/image1.jpeg" width="250"> |
 
+[Vídeo do robô no circuito](imagens/ROBOTICA2.mp4)
 
-## 🎥 Vídeos / GIFs
+## Licença
 
-[![Circuito] - Vídeo da Robótica](imagens/ROBOTICA2.mp4)
-
----
-
-## 🥇 Autores
-
-- | Derick Portela | [@DerickP](https://github.com/DerickxP) |
-- | Michael Domingos | [@michaeldomingos](https://github.com/mmichaeldomingos) |
-- | Raul Vitor | [@raulvitor](https://github.com/) |
+[MIT](LICENSE)

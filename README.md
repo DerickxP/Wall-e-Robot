@@ -64,7 +64,7 @@ Você pode usar, modificar e compartilhar à vontade.
 
 ## 📸 Imagens
 
-| Equipe | Robô | Premiação |
+| Equipe | Robô | Apresentação na ENTEC |
 |--------|------|-----------|
 | <img src="imagens/image3.jpeg" width="250"> | <img src="imagens/image2.jpeg" width="250"> | <img src="imagens/image1.jpeg" width="250"> |
 
